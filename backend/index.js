@@ -7,7 +7,7 @@ app.use(express.json());
 dotenv.config();
 const PORT = process.env.PORT || 3001;
 const URI = process.env.MONGODB_URI;
-
+ 
 async function connectToMe(){
   try{
     await mongoose.connect(URI);
