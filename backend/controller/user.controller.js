@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
 import bcrypt from 'bcrypt'; 
 import createTokenAndSaveCookie from "../jwt/generateToken.js";
-// Signup Controller
+ 
 export const signup = async (req, res) => {
   const { fullname, email, password, confirmPassword } = req.body;
   console.log("hi from signup route");
