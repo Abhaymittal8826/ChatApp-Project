@@ -13,8 +13,16 @@ dotenv.config();
 // middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
 
+app.use(cors({
+  origin: "http://localhost:5173", 
+  credentials: true
+}));
+
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+  
 const PORT = process.env.PORT || 4001;
 const URI = process.env.MONGODB_URI;
 
@@ -25,7 +33,7 @@ try {
   console.log(error);
 }
 
-//routes
+console.log("Hi");
 app.use("/api/user", userRoute);
 app.use("/api/message", messageRoute);
    
